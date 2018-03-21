@@ -11,5 +11,3 @@ COPY *.sh /
 RUN chmod 755 /*.sh \
 && chmod 755 $HADOOP_HOME/bin/* \
 && chmod 755 $HADOOP_HOME/sbin/*
-
-CMD ["bash", "/namenode.sh"]
