@@ -22,6 +22,10 @@
     <value>mapreduce_shuffle</value>
   </property>
   <property>
+    <name>yarn.log.server.url</name>
+    <value>${YARN_LOG_SERVER_URL}</value>
+  </property>
+  <property>
     <name>yarn.log-aggregation-enable</name>
     <value>true</value>
   </property>

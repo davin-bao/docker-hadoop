@@ -33,7 +33,14 @@ sed -i "s|\${HADOOP_DFS_REPLICATION}|${HADOOP_DFS_REPLICATION}|g" $HADOOP_HOME/e
 sed -i "s|\${HADOOP_DFS_PERMISSIONS}|${HADOOP_DFS_PERMISSIONS}|g" $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 
 echo "替换配置文件[$HADOOP_HOME/etc/hadoop/yarn-site.xml]"
+if [ -z "$JOB_HISTORY_SERVER_HOST" ]; then
+    echo "没有配置JOB_HISTORY_SERVER_HOST"
+    exit 1
+fi
+export JOB_HISTORY_SERVER_PORT=${JOB_HISTORY_SERVER_PORT:-19888}
+export YARN_LOG_SERVER_URL=${YARN_LOG_SERVER_URL:-http://${JOB_HISTORY_SERVER_HOST}:${JOB_HISTORY_SERVER_PORT}/jobhistory/logs}
 sed -i "s|\${HADOOP_YARN_RESOURCEMANAGER_HOST}|${HADOOP_YARN_RESOURCEMANAGER_HOST}|g" $HADOOP_HOME/etc/hadoop/yarn-site.xml
+sed -i "s|\${YARN_LOG_SERVER_URL}|${YARN_LOG_SERVER_URL}|g" $HADOOP_HOME/etc/hadoop/yarn-site.xml
 
 echo "替换配置文件[$HADOOP_HOME/etc/hadoop/mapred-site.xml]"
 sed -i "s|\${HADOOP_YARN_HISTORYSERVER_INTERMEDIATE_DONE_DIR}|${HADOOP_YARN_HISTORYSERVER_INTERMEDIATE_DONE_DIR}|g" $HADOOP_HOME/etc/hadoop/mapred-site.xml
