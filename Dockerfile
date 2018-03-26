@@ -1,4 +1,4 @@
-FROM 192.168.61.129:5000/hadoop-base:latest
+FROM 192.168.189.47:5000/hadoop-base:latest
 
 ENV HADOOP_HOME=/usr/local/hadoop-2.7.2 \
     HADOOP_YARN_HOME=/usr/local/hadoop-2.7.2 \
