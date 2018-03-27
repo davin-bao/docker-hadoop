@@ -20,14 +20,6 @@
 		<value>yarn</value>
 	</property>
 	<property>
-		<name>mapreduce.jobhistory.intermediate-done-dir</name>
-		<value>${HADOOP_YARN_HISTORYSERVER_INTERMEDIATE_DONE_DIR}</value>
-	</property>
-	<property>
-		<name>mapreduce.jobhistory.done-dir</name>
-		<value>${HADOOP_YARN_HISTORYSERVER_DONE_DIR}</value>
-	</property>
-	<property>
 		<name>mapreduce.application.classpath</name>
 		<value>
 			/usr/local/hadoop-2.7.2/etc/hadoop,
