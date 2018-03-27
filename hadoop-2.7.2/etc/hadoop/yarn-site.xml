@@ -45,5 +45,4 @@
         /usr/local/hadoop-2.7.2/share/hadoop/yarn/lib/*
     </value>
   </property>
-
 </configuration>
