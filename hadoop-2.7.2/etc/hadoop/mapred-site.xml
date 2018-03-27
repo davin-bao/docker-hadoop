@@ -27,4 +27,20 @@
 		<name>mapreduce.jobhistory.done-dir</name>
 		<value>${HADOOP_YARN_HISTORYSERVER_DONE_DIR}</value>
 	</property>
+	<property>
+		<name>mapreduce.application.classpath</name>
+		<value>
+			/usr/local/hadoop-2.7.2/etc/hadoop,
+	        /usr/local/hadoop-2.7.2/share/hadoop/common/*,
+	        /usr/local/hadoop-2.7.2/share/hadoop/common/lib/*,
+			/usr/local/hadoop-2.7.2/share/hadoop/tools/*,
+	        /usr/local/hadoop-2.7.2/share/hadoop/tools/lib/*,
+	        /usr/local/hadoop-2.7.2/share/hadoop/hdfs/*,
+	        /usr/local/hadoop-2.7.2/share/hadoop/hdfs/lib/*,
+	        /usr/local/hadoop-2.7.2/share/hadoop/mapreduce/*,
+	        /usr/local/hadoop-2.7.2/share/hadoop/mapreduce/lib/*,
+	        /usr/local/hadoop-2.7.2/share/hadoop/yarn/*,
+	        /usr/local/hadoop-2.7.2/share/hadoop/yarn/lib/*
+		</value>
+	</property>
 </configuration>
